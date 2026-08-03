@@ -34,6 +34,13 @@ body {
     color: #3498db;
 }
 
+/* Caso coloque imagem de logo futuramente */
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
 .navbar nav a {
     text-decoration: none;
     color: #555;
@@ -57,7 +64,7 @@ body {
     background-color: #2980b9;
 }
 
-/* Banner Hero */
+/* Banner Hero (Seção Principal) */
 .hero {
     background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
     color: white;
@@ -71,6 +78,7 @@ body {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.2;
 }
 
 .hero-content p {
@@ -80,6 +88,7 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
 }
 
 .btn-cta {
@@ -92,6 +101,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
     transition: 0.3s;
+    display: inline-block;
 }
 
 .btn-cta:hover {
@@ -99,7 +109,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Seção de Soluções */
+/* Seção de Catálogo de Produtos */
 .portfolio-section {
     padding: 80px 8%;
     text-align: center;
@@ -113,17 +123,18 @@ body {
 .subtitle {
     color: #7f8c8d;
     margin-bottom: 50px;
+    font-size: 1.1rem;
 }
 
 .grid-produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .card-produto {
     background: white;
-    padding: 30px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     text-align: left;
@@ -135,29 +146,30 @@ body {
     transform: translateY(-5px);
 }
 
-.placeholder-img {
-    height: 180px;
-    background-color: #ecf0f1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #95a5a6;
-    border-radius: 5px;
+/* Formatação Padrão para as Fotos dos Produtos */
+.img-produto-portfolio {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
     margin-bottom: 20px;
-    font-weight: bold;
+    display: block;
+    background-color: #ecf0f1; /* Cor cinza de fundo se a foto falhar */
 }
 
 .card-produto h3 {
     margin-bottom: 12px;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    color: #1a252f;
 }
 
 .card-produto p {
     color: #7f8c8d;
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
-/* CTA Final */
+/* Chamada para Ação Final (CTA) */
 .cta-final {
     background-color: #ecf0f1;
     padding: 80px 8%;
@@ -165,6 +177,7 @@ body {
 }
 
 .cta-final h2 {
+    font-size: 2rem;
     margin-bottom: 15px;
 }
 
@@ -174,6 +187,8 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .btn-whatsapp {
@@ -194,7 +209,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Rodapé */
+/* Rodapé do Site */
 footer {
     background-color: #1a252f;
     color: #7f8c8d;
@@ -203,3 +218,20 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Responsividade Básica para Celulares */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    .navbar nav a {
+        margin: 0 10px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero {
+        padding: 80px 5%;
+    }
+}
