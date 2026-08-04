@@ -5,37 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="goPyQqFx74-5RagKKM1dL-Grs1B_o3tyFF08vZe-KpE" />
     <title>LumiCraft 3D | Soluções em Impressão 3D: Corporativo, Casa, Decoração e Brinquedos</title>
-    <link rel="stylesheet" href="style.css">
     
-    <!-- Estilos Avançados para Organização e Lightbox -->
     <style>
-        .img-produto-portfolio {
-            cursor: pointer;
-            transition: transform 0.2s;
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-bottom: 2px solid #333;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .img-produto-portfolio:hover {
-            transform: scale(1.02);
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
         }
-        /* Grid geral reorganizado */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #0a0a0a;
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .navbar nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .navbar nav a:hover {
+            color: #D4AF37;
+        }
+        .btn-contato-topo {
+            background: #D4AF37;
+            color: #000 !important;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold !important;
+        }
+        .btn-contato-topo:hover {
+            background: #ffffff !important;
+        }
+        .hero {
+            padding: 100px 5%;
+            text-align: center;
+            background: radial-gradient(circle, #222 0%, #121212 100%);
+            border-bottom: 1px solid #222;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 42px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #aaaaaa;
+            margin-bottom: 30px;
+        }
+        .btn-cta {
+            display: inline-block;
+            background: #D4AF37;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 15px 35px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-cta:hover {
+            background: #ffffff;
+            transform: scale(1.03);
+        }
         .secao-categorias {
-            padding: 60px 5%;
+            padding: 80px 5%;
             background: #1a1a1a;
-            color: #fff;
+        }
+        .secao-categorias h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 10px;
         }
         .bloco-categoria {
-            margin-bottom: 50px;
+            margin-top: 60px;
+            margin-bottom: 40px;
         }
         .bloco-categoria h3 {
             font-size: 24px;
             color: #D4AF37;
             border-left: 4px solid #D4AF37;
             padding-left: 15px;
-            margin-bottom: 25px;
-            font-family: sans-serif;
+            margin-bottom: 30px;
+        }
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
         .card-produto {
             background: #252525;
@@ -44,18 +121,39 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: translateY 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.2s;
         }
         .card-produto:hover {
             transform: translateY(-5px);
         }
+        .img-produto-portfolio {
+            cursor: pointer;
+            transition: opacity 0.2s;
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-bottom: 1px solid #333;
+        }
+        .img-produto-portfolio:hover {
+            opacity: 0.9;
+        }
         .card-body {
-            padding: 20px;
+            padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+        .card-body h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .card-body p {
+            font-size: 14px;
+            color: #aaaaaa;
+            margin-bottom: 20px;
         }
         .btn-orcamento-produto {
             display: block;
@@ -64,21 +162,34 @@
             color: #000;
             text-decoration: none;
             font-weight: bold;
-            padding: 10px;
+            padding: 12px;
             border-radius: 4px;
-            margin-top: 15px;
             font-size: 14px;
             transition: background 0.2s;
+            margin-top: auto;
         }
         .btn-orcamento-produto:hover {
-            background: #fff;
+            background: #ffffff;
         }
-        /* Fundo escuro do Lightbox */
+        .btn-whatsapp {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 25px;
+            transition: background 0.2s;
+        }
+        .btn-whatsapp:hover {
+            background: #1ebd59;
+        }
         .lightbox-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 9999;
             justify-content: center;
             align-items: center;
@@ -87,56 +198,57 @@
         .lightbox-overlay img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border-radius: 6px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.7);
             animation: zoomIn 0.2s ease-out;
         }
         @keyframes zoomIn {
             from { transform: scale(0.9); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; text-align: center; }
+            .hero h1 { font-size: 30px; }
+            .secao-categorias h2 { font-size: 26px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Cabeçalho com Logo (Apenas Texto) -->
     <header class="navbar">
-        <div class="logo-texto" style="display: flex; align-items: baseline; gap: 6px; font-family: sans-serif;">
-            <span style="font-size: 26px; font-weight: bold; color: #D4AF37; letter-spacing: 1px;">LumiCraft</span>
-            <span style="font-size: 20px; font-weight: 600; color: #FFFFFF; letter-spacing: 1px;">3D</span>
+        <div class="logo-texto" style="display: flex; align-items: baseline; gap: 6px;">
+            <span style="font-size: 28px; font-weight: bold; color: #D4AF37; letter-spacing: 1px;">LumiCraft</span>
+            <span style="font-size: 22px; font-weight: 600; color: #FFFFFF; letter-spacing: 1px;">3D</span>
         </div>
         <nav>
-            <a href="#produtos">Nosso Catálogo</a>
+            <a href="#produtos">Catálogo</a>
             <a href="#contato" class="btn-contato-topo">Falar com Especialista</a>
         </nav>
     </header>
 
-    <!-- Banner Principal Adaptado para Todos os Públicos -->
     <section class="hero">
         <div class="hero-content">
             <h1>Tecnologia em Impressão 3D para sua Empresa, sua Casa e sua Família</h1>
-            <p>Do brinde corporativo de alto impacto à decoração do seu lar e brinquedos sensoriais educativos. Conectamos design moderno, sofisticação e utilidade através da fabricação digital.</p>
-            <a href="https://wa.me/5594984506876" target="_blank" class="btn-cta">Solicitar Orçamento Geral</a>
+            <p>Do brinde corporativo de alto impacto à decoração personalizada do seu lar e brinquedos sensoriais educativos. Conectamos design moderno, sofisticação e utilidade prática através da fabricação digital.</p>
+            <a href="https://wa.me!" target="_blank" class="btn-cta">Solicitar Orçamento Geral</a>
         </div>
     </section>
 
-    <!-- Seção Unificada de Produtos Divulgações -->
     <section id="produtos" class="secao-categorias">
         <h2>Explore Nossas Soluções</h2>
-        <p class="subtitle" style="text-align: center; margin-bottom: 40px; color: #aaa;">Navegue pelas nossas linhas de fabricação e clique nas fotos para ver detalhes.</p>
-
-        <!-- CATEGORIA 1: CORPORATIVO & COMERCIAL -->
+        <p class="subtitle" style="text-align: center; color: #aaa; margin-top: 5px;">Navegue pelas nossas linhas de fabricação. Clique nas fotos para ampliar o tamanho.</p>
         <div class="bloco-categoria">
             <h3>💼 Linha Corporativa & Comercial</h3>
             <div class="grid-produtos">
+                
                 <div class="card-produto">
                     <img src="chaveiro.png" alt="Chaveiros Personalizados e NFC" class="img-produto-portfolio" onclick="abrirImagem(this)">
                     <div class="card-body">
                         <div>
                             <h4>Chaveiros Premium & NFC</h4>
-                            <p>Modelos tradicionais ou com chip NFC para compartilhar contatos por aproximação.</p>
+                            <p>Modelos corporativos tradicionais ou integrados com chip NFC para compartilhamento de contatos e links comerciais por aproximação.</p>
                         </div>
-                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                        <a href="https://wa.me." target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
                     </div>
                 </div>
 
@@ -145,69 +257,120 @@
                     <div class="card-body">
                         <div>
                             <h4>Cartões de Visita Digitais NFC</h4>
-                            <p>Cartões modernos e duráveis configurados com as redes sociais da sua empresa.</p>
+                            <p>Cartões corporativos modernos e duráveis impressos em 3D, configurados para direcionar seus clientes direto para suas redes.</p>
                         </div>
-                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                        <a href="https://wa.me." target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
                     </div>
                 </div>
 
                 <div class="card-produto">
-                    <img src="https://unsplash.com" alt="Placas com QR Code" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <img src="placa-qrcode.png" alt="Placas com QR Code" class="img-produto-portfolio" onclick="abrirImagem(this)">
                     <div class="card-body">
                         <div>
                             <h4>Placas de Balcão QR Code</h4>
-                            <p>Facilite o Pix, redes sociais ou avaliações Google com displays modernos.</p>
+                            <p>Facilite pagamentos via Pix, acesso rápido ao Wi-Fi ou avaliações no perfil do Google com displays modernos de atendimento.</p>
                         </div>
-                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                        <a href="https://wa.me." target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- CATEGORIA 2: UTILIDADES & DECORAÇÃO -->
         <div class="bloco-categoria">
             <h3>🏠 Casa, Decoração & Festas</h3>
             <div class="grid-produtos">
+                
                 <div class="card-produto">
-                    <img src="https://unsplash.com" alt="Organizadores e Porta-Canetas" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <img src="organizadores.png" alt="Organizadores e Porta-Canetas" class="img-produto-portfolio" onclick="abrirImagem(this)">
                     <div class="card-body">
                         <div>
                             <h4>Organizadores & Utensílios de Mesa</h4>
-                            <p>Porta-canetas geométricos e suportes organizadores elegantes para escritórios e residências.</p>
+                            <p>Brindes utilitários de mesa e suportes organizadores organizados com design geométrico moderno para escritórios ou residências.</p>
                         </div>
-                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                        <a href="https://wa.me." target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
                     </div>
                 </div>
 
                 <div class="card-produto">
-                    <img src="https://unsplash.com" alt="Artigos de Decoração e Festas" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <img src="decoracao.png" alt="Artigos de Decoração e Festas" class="img-produto-portfolio" onclick="abrirImagem(this)">
                     <div class="card-body">
                         <div>
                             <h4>Decoração Customizada & Festas</h4>
-                            <p>Luminárias com nomes, topos de bolo personalizados, cortadores e peças temáticas para eventos.</p>
+                            <p>Luminárias com nomes, topos de bolo personalizados, cortadores especiais e projetos temáticos exclusivos sob demanda para eventos.</p>
                         </div>
-                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                        <a href="https://wa.me." target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
                     </div>
                 </div>
 
                 <div class="card-produto">
-                    <img src="https://unsplash.com" alt="Placas de Homenagem" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <img src="placa-homenagem.png" alt="Placas de Homenagem" class="img-produto-portfolio" onclick="abrirImagem(this)">
                     <div class="card-body">
                         <div>
                             <h4>Placas de Homenagem e Sinalização</h4>
-                            <p>Troféus de reconhecimento para empresas ou placas decorativas residenciais premium.</p>
+                            <p>Placas exclusivas para comemorar tempo de casa (Endomarketing), troféus e identificações premium para salas e escritórios.</p>
                         </div>
-                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                        <a href="https://wa.me." target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- CATEGORIA 3: LINHA INFANTIL / SENSORIAL -->
         <div class="bloco-categoria">
             <h3>🧩 Brinquedos Sensoriais & Educativos</h3>
             <div class="grid-produtos">
+                
                 <div class="card-produto">
-                    <img src="https://unsplash.com" alt="Brinquedos Sensoriais" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <img src="brinquedos.png" alt="Brinquedos Sensoriais" class="img-produto-portfolio" onclick="abrirImagem(this)">
                     <div class="card-body">
                         <div>
+                            <h4>Artigos Sensoriais (Fidget Toys)</h4>
+                            <p>Brinquedos articulados e models com texturas focados no alívio de estresse, desenvolvimento da coordenação motora e foco infantil.</p>
+                        </div>
+                        <a href="https://wa.me?" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <div class="card-produto">
+                    <img src="projetos.png" alt="Projetos sob Demanda" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <div class="card-body">
+                        <div>
+                            <h4>Projetos Especiais sob Demanda</h4>
+                            <p>Tem uma ideia em mente? Desenvolvemos protótipos rápidos, substituições de peças e modelos personalizados em lotes ou unidade única.</p>
+                        </div>
+                        <a href="https://wa.me." target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" style="padding: 60px 5%; background: #151515; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 28px; margin-bottom: 10px;">Traga sua ideia para a realidade com a LumiCraft 3D</h2>
+            <p style="color: #aaa;">Atendemos desde demandas corporativas em escala até pedidos exclusivos para o seu cotidiano familiar. Fale conosco agora!</p>
+            <a href="https://wa.me." target="_blank" class="btn-whatsapp">💬 Chamar no WhatsApp Comercial</a>
+        </div>
+    </section>
+
+    <div style="width: 100%; height: 350px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center;">
+        <img src="https://pexels.com" alt="Impressora 3D Profissional em Funcionamento" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.55);">
+        <div style="position: absolute; text-align: center; color: #fff; z-index: 2; padding: 0 20px;">
+            <p style="font-size: 22px; font-weight: bold; color: #D4AF37; margin-bottom: 5px; letter-spacing: 1px; text-shadow: 2px 2px 5px rgba(0,0,0,0.9);">TECNOLOGIA DE PONTA</p>
+            <p style="font-size: 15px; text-shadow: 1px 1px 4px rgba(0,0,0,0.9); color: #ddd;">Produção digital camada por camada com acabamento premium e alta precisão</p>
+        </div>
+    </div>
+
+    <footer style="background: #0a0a0a; color: #ffffff; padding: 50px 5% 30px 5%; text-align: center; border-top: 1px solid #222;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 25px;">
+            
+            <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+                <a href="mailto:lumicraftimpressaod@gmail.com" style="color: #ffffff; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#ffffff'">
+                    📧 lumicraftimpressaod@gmail.com
+                </a>
+                <a href="https://instagram.com" target="_blank" style="color: #ffffff; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#ffffff'">
+                    📸 @lumicraftimpressaod
+                </a>
+                <a href="https://facebook.com" target="_blank" style="color: #ffffff; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#ffffff'">
+                    👥 lumicraftimpressao3d
+                </a>
+            </div>
