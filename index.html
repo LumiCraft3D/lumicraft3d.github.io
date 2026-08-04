@@ -4,30 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="goPyQqFx74-5RagKKM1dL-Grs1B_o3tyFF08vZe-KpE" />
-    <title>LumiCraft 3D | Brindes Corporativos e Identificação Comercial</title>
+    <title>LumiCraft 3D | Soluções em Impressão 3D: Corporativo, Casa, Decoração e Brinquedos</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Estilos para a imagem abrir na tela ao clicar -->
+    <!-- Estilos Avançados para Organização e Lightbox -->
     <style>
         .img-produto-portfolio {
             cursor: pointer;
             transition: transform 0.2s;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 2px solid #333;
         }
         .img-produto-portfolio:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
+        }
+        /* Grid geral reorganizado */
+        .secao-categorias {
+            padding: 60px 5%;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .bloco-categoria {
+            margin-bottom: 50px;
+        }
+        .bloco-categoria h3 {
+            font-size: 24px;
+            color: #D4AF37;
+            border-left: 4px solid #D4AF37;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            font-family: sans-serif;
+        }
+        .card-produto {
+            background: #252525;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: translateY 0.2s;
+        }
+        .card-produto:hover {
+            transform: translateY(-5px);
+        }
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .btn-orcamento-produto {
+            display: block;
+            text-align: center;
+            background: #D4AF37;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .btn-orcamento-produto:hover {
+            background: #fff;
         }
         /* Fundo escuro do Lightbox */
         .lightbox-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.9);
             z-index: 9999;
             justify-content: center;
             align-items: center;
             cursor: zoom-out;
         }
-        /* Imagem expandida */
         .lightbox-overlay img {
             max-width: 90%;
             max-height: 90%;
@@ -43,110 +99,115 @@
 </head>
 <body>
 
-    <!-- Cabeçalho com Logo -->
-        <!-- Cabeçalho com Logo (Apenas Texto) -->
+    <!-- Cabeçalho com Logo (Apenas Texto) -->
     <header class="navbar">
-        <!-- Removida a tag de imagem, mantendo apenas o texto com estilo premium -->
         <div class="logo-texto" style="display: flex; align-items: baseline; gap: 6px; font-family: sans-serif;">
             <span style="font-size: 26px; font-weight: bold; color: #D4AF37; letter-spacing: 1px;">LumiCraft</span>
             <span style="font-size: 20px; font-weight: 600; color: #FFFFFF; letter-spacing: 1px;">3D</span>
         </div>
         <nav>
-            <a href="#produtos">Produtos & Brindes</a>
+            <a href="#produtos">Nosso Catálogo</a>
             <a href="#contato" class="btn-contato-topo">Falar com Especialista</a>
         </nav>
     </header>
 
-
-    <!-- Banner Principal -->
+    <!-- Banner Principal Adaptado para Todos os Públicos -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Brindes Exclusivos e Identificação em Impressão 3D para seu Negócio</h1>
-            <p>Conecte sua marca com tecnologia e sofisticação. Chaveiros NFC, placas QR Code, brindes personalizados e soluções corporativas de alto impacto.</p>
-            <a href="https://wa.me/5594984506876" target="_blank" class="btn-cta">Solicitar Orçamento Grátis</a>
+            <h1>Tecnologia em Impressão 3D para sua Empresa, sua Casa e sua Família</h1>
+            <p>Do brinde corporativo de alto impacto à decoração do seu lar e brinquedos sensoriais educativos. Conectamos design moderno, sofisticação e utilidade através da fabricação digital.</p>
+            <a href="https://wa.me/5594984506876" target="_blank" class="btn-cta">Solicitar Orçamento Geral</a>
         </div>
     </section>
 
-    <!-- Galeria de Soluções/Produtos -->
-    <section id="produtos" class="portfolio-section">
-        <h2>Nosso Catálogo Corporativo</h2>
-        <p class="subtitle">Produtos modernos para o marketing, recepção e premiação da sua marca.</p>
-        
-        <div class="grid-produtos">
-            <!-- Produto 1 -->
-            <div class="card-produto">
-                <img src="chaveiro.png" alt="Chaveiros Personalizados e NFC" class="img-produto-portfolio" onclick="abrirImagem(this)">
-                <h3>Chaveiros Personalizados</h3>
-                <p>Chaveiros normais com sua logo ou chaveiros com tecnologia NFC integrada para compartilhamento de contatos e links por aproximação.</p>
-            </div>
+    <!-- Seção Unificada de Produtos Divulgações -->
+    <section id="produtos" class="secao-categorias">
+        <h2>Explore Nossas Soluções</h2>
+        <p class="subtitle" style="text-align: center; margin-bottom: 40px; color: #aaa;">Navegue pelas nossas linhas de fabricação e clique nas fotos para ver detalhes.</p>
 
-            <!-- Produto 2 -->
-            <div class="card-produto">
-                <img src="cartão digital.png" alt="Cartões de Visita Digitais" class="img-produto-portfolio" onclick="abrirImagem(this)">
-                <h3>Cartões de Visita Digitais</h3>
-                <p>Cartões corporativos modernos e duráveis impressos em 3D, configurados para direcionar seus clientes direto para suas redes ou site.</p>
-            </div>
+        <!-- CATEGORIA 1: CORPORATIVO & COMERCIAL -->
+        <div class="bloco-categoria">
+            <h3>💼 Linha Corporativa & Comercial</h3>
+            <div class="grid-produtos">
+                <div class="card-produto">
+                    <img src="chaveiro.png" alt="Chaveiros Personalizados e NFC" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <div class="card-body">
+                        <div>
+                            <h4>Chaveiros Premium & NFC</h4>
+                            <p>Modelos tradicionais ou com chip NFC para compartilhar contatos por aproximação.</p>
+                        </div>
+                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                    </div>
+                </div>
 
-            <!-- Produto 3 -->
-            <div class="card-produto">
-                <img src="QRCODE.PNG" alt="Placas com QR Code" class="img-produto-portfolio" onclick="abrirImagem(this)">
-                <h3>Placas com QR Code</h3>
-                <p>Facilite pagamentos via Pix, acesso ao Wi-Fi ou avaliações no Google com placas modernas de balcão.</p>
-            </div>
+                <div class="card-produto">
+                    <img src="cartão de visita digital.png" alt="Cartões de Visita Digitais" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <div class="card-body">
+                        <div>
+                            <h4>Cartões de Visita Digitais NFC</h4>
+                            <p>Cartões modernos e duráveis configurados com as redes sociais da sua empresa.</p>
+                        </div>
+                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                    </div>
+                </div>
 
-            <!-- Produto 4 -->
-            <div class="card-produto">
-                <img src="placa reconhecimento.png" alt="Placas de Homenagem e Sinalização" class="img-produto-portfolio" onclick="abrirImagem(this)">
-                <h3>Placas de Homenagem e Sinalização</h3>
-                <p>Placas exclusivas para comemorar tempo de casa (Endomarketing) e identificação premium para portas de escritórios.</p>
-            </div>
-
-            <!-- Produto 5 -->
-            <div class="card-produto">
-                <img src="https://unsplash.com" alt="Organizadores e Porta-Canetas" class="img-produto-portfolio" onclick="abrirImagem(this)">
-                <h3>Organizadores & Porta-Canetas</h3>
-                <p>Brindes utilitários de mesa para escritórios com design geométrico moderno e a marca da sua empresa em destaque.</p>
-            </div>
-
-            <!-- Produto 6 -->
-            <div class="card-produto">
-                <img src="https://unsplash.com" alt="Brindes Corporativos Gerais" class="img-produto-portfolio" onclick="abrirImagem(this)">
-                <h3>Brindes Corporativos Gerais</h3>
-                <p>Logotipos físicos de mesa, abridores, marcadores de página e projetos personalizados sob demanda para eventos.</p>
+                <div class="card-produto">
+                    <img src="https://unsplash.com" alt="Placas com QR Code" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <div class="card-body">
+                        <div>
+                            <h4>Placas de Balcão QR Code</h4>
+                            <p>Facilite o Pix, redes sociais ou avaliações Google com displays modernos.</p>
+                        </div>
+                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- Seção de Chamada para Ação Final -->
-    <section id="contato" class="cta-final">
-        <h2>Destaque o seu negócio com produtos exclusivos</h2>
-        <p>Precisa de uma quantidade específica ou de um projeto sob medida com a sua identidade visual? Nossa equipe está pronta para te atender.</p>
-        <a href="https://wa.me/5594984506876" target="_blank" class="btn-whatsapp">💬 Chamar no WhatsApp Comercial</a>
-    </section>
+        <!-- CATEGORIA 2: UTILIDADES & DECORAÇÃO -->
+        <div class="bloco-categoria">
+            <h3>🏠 Casa, Decoração & Festas</h3>
+            <div class="grid-produtos">
+                <div class="card-produto">
+                    <img src="https://unsplash.com" alt="Organizadores e Porta-Canetas" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <div class="card-body">
+                        <div>
+                            <h4>Organizadores & Utensílios de Mesa</h4>
+                            <p>Porta-canetas geométricos e suportes organizadores elegantes para escritórios e residências.</p>
+                        </div>
+                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                    </div>
+                </div>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2026 LumiCraft 3D - Impressão 3D Profissional. Todos os direitos reservados.</p>
-    </footer>
+                <div class="card-produto">
+                    <img src="https://unsplash.com" alt="Artigos de Decoração e Festas" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <div class="card-body">
+                        <div>
+                            <h4>Decoração Customizada & Festas</h4>
+                            <p>Luminárias com nomes, topos de bolo personalizados, cortadores e peças temáticas para eventos.</p>
+                        </div>
+                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                    </div>
+                </div>
 
-    <!-- Estrutura do Lightbox que aparece ao clicar -->
-    <div id="lightbox" class="lightbox-overlay" onclick="fecharImagem()">
-        <img id="lightbox-img" src="" alt="Imagem Expandida">
-    </div>
+                <div class="card-produto">
+                    <img src="https://unsplash.com" alt="Placas de Homenagem" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <div class="card-body">
+                        <div>
+                            <h4>Placas de Homenagem e Sinalização</h4>
+                            <p>Troféus de reconhecimento para empresas ou placas decorativas residenciais premium.</p>
+                        </div>
+                        <a href="https://wa.me/5594984506876" target="_blank" class="btn-orcamento-produto">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <!-- Script para controlar a abertura e fechamento -->
-    <script>
-        function abrirImagem(imgElement) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = imgElement.src;
-            lightbox.style.display = 'flex';
-        }
-
-        function fecharImagem() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
-    </script>
-
-</body>
-</html>
+        <!-- CATEGORIA 3: LINHA INFANTIL / SENSORIAL -->
+        <div class="bloco-categoria">
+            <h3>🧩 Brinquedos Sensoriais & Educativos</h3>
+            <div class="grid-produtos">
+                <div class="card-produto">
+                    <img src="https://unsplash.com" alt="Brinquedos Sensoriais" class="img-produto-portfolio" onclick="abrirImagem(this)">
+                    <div class="card-body">
+                        <div>
